@@ -1,0 +1,106 @@
+<html> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <script 
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <script 
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <head>
+	<title>Garbage Can Level Sensor</title>
+<meta http-equiv="refresh" content="5;URL='http://54.160.238.67:8000/realTime/dataDisplay/'" />
+</head>
+<style>
+	.col-md-6
+	{
+		width:50%;
+		height:75%;
+	}
+	li
+	{
+		display:inline-block;
+	}
+	.bg
+	{
+                {% load staticfiles %}
+		background:url("{% static "realTime/dataDisplay/bac.jpg" %}");
+		height:100%;
+		width:100%;
+		background-repeat:no-repeat;
+		background-size:cover;
+		padding:0px;
+	}
+	footer
+	{
+	padding:0px;	
+	}
+	.b
+	{
+                {% load staticfiles %}
+		background:url("{% static "realTime/dataDisplay/can.png"%}");
+		background-color:blue;
+		background-size:190px;
+		background-repeat:no-repeat;
+		background-position:center; 
+	}
+	h4
+	{
+		font-family: monospace;
+ 	 	overflow: hidden; 
+  		border-right: .15em solid #ffffff; 
+ 		white-space: nowrap; 
+  		margin: 0 auto; 
+  		letter-spacing: .15em; 
+  		animation: 
+    	typing 7.5s steps(30, end) infinite ,
+    	blink-caret 1s step-end ;
+	}
+	@keyframes typing { 
+  	0% {width: 0 }
+    50%{width: 100%}
+    100%{width:100%}
+}
+@keyframes blink-caret {
+  from, to { border-width: 0.15em }
+  50% { border-width: 0em }
+}
+</style>
+<body>
+	<div class="bg">
+		<div class="container-fluid">
+			<ul>
+			<li style="margin:0px;"><img  style="height:140px;margin-left:0px;"></li>
+			<li style="padding-left:450px;padding-right:30px;"><h1 style="color:#ffffff">Online Garbage Can Level Sensor</h1></li>
+		</ul>
+		</div>
+		<div class="container" style="padding-top:1%;">
+			<h1 style="margin-left:15%;color:#0d47a1">LOCATION 1&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspLOCATION 2</h1>
+			<div class="row">
+				<div class="col-md-6">
+				<div class="col-md-6 b"  style="background-color:#00695c;"">
+					<h4 style="color:white;padding-left:30%;">degradable</h4>
+                                        <h3 style="margin-top:25%;margin-left:40%;color:#ffffff">{{ degrees }} cm</h3>
+					<button onclick="location.href='http://54.160.238.67:8000/realTime/tellResponse/?=userAnswer:1,'"  type="button" class="btn btn-success" style="margin-top:110%;display:inline-block;">ACTIVATE</button>
+					<button onclick="location.href='http://54.160.238.67:8000/realTime/tellResponse/?=userAnswer:0,'"  type="button" class="btn btn-danger" style="margin-top:110%;margin-left:25%;">DISABLE</button>
+				</div>
+				<div class="col-md-6 b" style="background-color:#3F729B">
+					<h4 style="color:white;padding-left:13%;">non-degradable</h4>
+					<button type="button" class="btn btn-success" style="margin-top:150%;display:inline-block;">ACTIVATE</button>
+					<button type="button" class="btn btn-danger" style="margin-top:150%;margin-left:25%;">DISABLE</button>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="col-md-6 b" style="background-color:#00695c;">
+					<h4 style="color:white;padding-left:30%;"">degradable</h4>
+					<button type="button" class="btn btn-success" style="margin-top:150%;display:inline-block;">ACTIVATE</button>
+					<button type="button" class="btn btn-danger" style="margin-top:150%;margin-left:25%;">DISABLE</button>
+				</div>
+				<div class="col-md-6 b"  style="background-color:#3F729B">
+					<h4 style="color:white;padding-left:13%;"">non-degradable</h4>
+					<button type="button" class="btn btn-success" style="margin-top:150%;display:inline-block;">ACTIVATE</button>
+					<button type="button" class="btn btn-danger" style="margin-top:150%;margin-left:25%;">DISABLE</button>
+				</div>
+			</div>
+			</div>
+		</div>
+		<footer>
+			&copy COPYRIGHT
+		</footer>
+	</div>
+</body>
+</html>
+

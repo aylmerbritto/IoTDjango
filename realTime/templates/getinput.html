@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+    <title>
+    UserInput
+    </title>
+</head>
+<body>    
+
+<form method="POST"> {% csrf_token %} 
+    <input type="text" name="temperature"><br>
+    <input type="text" name="humidity"><br>
+    <input type="text" name="pressure"><br>
+</form>
+</body>
